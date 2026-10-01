@@ -1,0 +1,20 @@
+<h1>Details</h1>
+
+@if(product(); as product){
+
+    <section>
+        <h3>{{product.name}}</h3>
+        <p>{{product.description}}</p>
+        <div id="container-div">
+            <p>{{product.price}}€</p>
+            <p>{{product.quantity}}pc</p>
+        </div>
+        <div id="div-img">
+            <img [src]="product.image">
+        </div>
+
+        <div>
+            <button (click)="navigateToUpdate(product.id)">Update</button>
+        </div>
+    </section>
+    }

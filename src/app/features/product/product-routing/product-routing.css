@@ -1,0 +1,17 @@
+ul{
+    background-color: gray;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+
+    li{
+        margin: 0.5rem;
+
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+    }
+}

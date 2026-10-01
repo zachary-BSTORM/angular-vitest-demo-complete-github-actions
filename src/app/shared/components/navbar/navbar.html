@@ -1,0 +1,25 @@
+<ul>
+    <li>
+        <a routerLink="/">Home</a>
+    </li>
+    <li>
+        @if(!isLogged()){
+            <a routerLink="/register">Register</a>
+        }
+        </li>
+        <li>
+            @if(!isLogged()){
+        <a routerLink="/login">Login</a>
+            }
+    </li>
+        <li>
+            @if(isLogged()){
+        <a routerLink="/product">Product</a>
+            }
+    </li>
+    <li>
+        @if(isLogged()){
+            <button id="logout" (click)="logout()">Logout</button>
+        }
+    </li>
+</ul>

@@ -1,0 +1,50 @@
+<h1>Update</h1>
+@if(this.product();as product){
+
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        
+        <div>
+        <label>Name</label>
+        <br>
+        <input type="text" formControlName="name">
+    </div>
+
+    
+    <div>
+        <label>Description</label>
+        <br>
+        <textarea formControlName="description"></textarea>
+    </div>
+
+    
+    <div>
+        <label>Price</label>
+        <br>
+        <input type="number" formControlName="price">
+    </div>
+
+        <div>
+        <label>Quantity</label>
+        <br>
+        <input type="number" formControlName="quantity">
+    </div>
+
+    <div>
+        <label>Image</label>
+        <br>
+        <input type="text" formControlName="image">
+    </div>
+    
+    @if (productForm.get('image')?.value; as imageUrl) {
+        <img [src]="imageUrl" >
+    }
+    <div id="container-btn">
+        <button type="submit">update</button>
+        <button type="button" (click)="delete(product.id)">delete</button>
+    </div>
+    
+</form>
+}
+@else{
+<p>Chargement ...</p>
+}

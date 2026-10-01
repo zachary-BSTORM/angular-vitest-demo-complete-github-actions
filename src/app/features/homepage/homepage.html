@@ -1,0 +1,56 @@
+<section>
+    <h2>Demo Angular avec Vitest pour les tests</h2>
+    <p>L'application comprend :</p>
+    <ul>
+        <li>Une page d'accueil ( homepage )</li>
+        <li>L'authentification ( register - login - authService )</li>
+        <li>La gestion de produits ( list - details - update - add - productService )</li>
+        <li>Un guard pour l'accès aux routes product</li>
+    </ul>
+</section>
+
+<section>
+    <p>Ce qui est testé :</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Cible</th>
+                <th>Type de test</th>
+                <th>Ce qu'on vérifie</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Composants ( visuel )</td>
+                <td>Unitaire ( TestBed, services mockés )</td>
+                <td>Ce qui doit être affiché l'est bien : état "chargement" avant la réponse,
+                    données du produit dans le DOM après, image absente si pas d'URL</td>
+            </tr>
+            <tr>
+                <td>Composants ( fonctionnel )</td>
+                <td>Unitaire ( spies sur Router et services )</td>
+                <td>Un clic déclenche la navigation avec la bonne route et les bons
+                    paramètres ( ex : /product/update/:id )</td>
+            </tr>
+            <tr>
+                <td>Formulaires ( login, register, add, update )</td>
+                <td>Unitaire ( composant + ReactiveForms )</td>
+                <td>Formulaire invalide → pas d'appel au service ; champ requis vide →
+                    contrôle invalide ; formulaire valide → soumission avec les bonnes valeurs</td>
+            </tr>
+            <tr>
+                <td>Services ( authService, productService )</td>
+                <td>Intégration ( HttpTestingController )</td>
+                <td>L'appel HTTP part vers la bonne URL avec la bonne méthode ( GET, POST,
+                    PUT ) et le bon body ; la réponse reçue correspond à ce qui est attendu ;
+                    gestion d'une réponse en erreur ( 404 / 401 )</td>
+            </tr>
+            <tr>
+                <td>Guard ( auth )</td>
+                <td>Unitaire ( authService mocké )</td>
+                <td>Utilisateur connecté → accès autorisé ; non connecté → accès bloqué
+                    et redirection vers /login</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

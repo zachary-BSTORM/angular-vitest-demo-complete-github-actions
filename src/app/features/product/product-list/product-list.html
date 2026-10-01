@@ -1,0 +1,20 @@
+<h1>Products</h1>
+
+<section>
+    <ul>
+        @for (product of products(); track product.id) {
+            <li>
+                <h3>{{product.name}}</h3>
+                <p>{{product.description}}</p>
+                <div>
+                    <p>{{product.price}}€</p>
+                    <p>{{product.quantity}}pc</p>
+                </div>
+                <img [src]="product.image" width="200">
+                <div id="container-button">
+                    <button (click)="navigateToDetails(product.id)">Details</button>
+                </div>
+            </li>    
+        }
+    </ul>
+</section>

@@ -1,0 +1,47 @@
+<h1>Add Product</h1>
+
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label>Name</label>
+        <br>
+        <input type="text" formControlName="name">
+    </div>
+
+    
+    <div>
+        <label>Description</label>
+        <br>
+        <textarea formControlName="description"></textarea>
+    </div>
+
+    
+    <div>
+        <label>Price</label>
+        <br>
+        <input type="number" formControlName="price">
+    </div>
+
+        <div>
+        <label>Quantity</label>
+        <br>
+        <input type="number" formControlName="quantity">
+    </div>
+
+    <div>
+        <label>Image</label>
+        <br>
+        <input type="text" formControlName="image">
+    </div>
+
+    @if(this.productForm.get('image')?.value){
+        <img [src]="this.productForm.get('image')?.value" width="200">
+    }
+    @if(errorMessage()){
+        <p style="color: red;font-weight: bold;">{{errorMessage()}}</p>
+    }
+    <div id="container-btn">
+        <button type="submit">Add</button>
+    </div>
+    
+</form>

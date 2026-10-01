@@ -1,0 +1,36 @@
+h1{
+    text-align: center;
+    margin: 3rem auto 0 auto;
+}
+
+section{
+    border: 1px solid black;
+    width: 50vw;
+    margin: 3rem auto;
+    padding: 1rem;
+    border-radius: 8px;
+
+    h3{
+        text-align: center;
+    }
+
+    p{
+        padding: 5px;
+    }
+
+}
+
+#container-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+#div-img{
+    width: fit-content;
+    margin: auto;
+
+    img{
+        border-radius: 8px;
+        width: 30vw;
+    }
+}

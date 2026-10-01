@@ -1,0 +1,27 @@
+form{
+    border: 1px solid black;
+    width: fit-content;
+    margin: 3rem auto 0 auto;
+    padding: 1rem;
+    border-radius: 8px;
+
+    div{
+        padding: 1rem;
+        text-align: center;
+
+        button{
+            padding: 6px;
+            border-radius: 8px;
+            font-weight: 700;
+            border: 1px solid black;
+        }
+
+
+        button:hover{
+            background-color: green;
+            border: 1px solid green;
+            transform: scale(1.1);
+        }
+    }
+
+}

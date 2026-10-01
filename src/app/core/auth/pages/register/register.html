@@ -1,0 +1,32 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Email</label>
+        <br>
+        <input type="text" formControlName="email">
+        @if(this.registerForm.get("email")?.dirty && this.registerForm.get("email")?.invalid){
+            <p style="color: red;font-weight: bold;">L'email est incorrect</p>
+        }
+    </div>
+
+    <div>
+        <label>Password</label>
+        <br>
+        <input type="password" formControlName="password">
+        @if(this.registerForm.get("password")?.dirty && this.registerForm.get("password")?.invalid){
+            <p style="color: red;font-weight: bold;">Le mot de passe est incorrect</p>
+        }
+    </div>
+
+    <div>
+        <label>Name</label>
+        <br>
+        <input type="text" formControlName="name">
+    </div>
+    @if(errorMessage()){
+        <p>{{errorMessage()}}</p>
+    }
+    <div>
+        <button type="submit">Register</button>
+    </div>
+
+</form>
