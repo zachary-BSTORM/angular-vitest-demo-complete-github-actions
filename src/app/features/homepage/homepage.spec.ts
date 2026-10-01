@@ -37,8 +37,7 @@ describe('Homepage', () => {
   // test la création du composant — pour une page statique c'est LE test
   // utile : il attrape toute erreur de template (balise mal fermée, etc.)
   it('should create', () => {
-    // expect(component).toBeTruthy();
-    expect(true).toBe(false)
+    expect(component).toBeTruthy();
   });
 
   // test que le titre de la page est affiché dans un heading.
